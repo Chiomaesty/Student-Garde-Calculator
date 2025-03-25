@@ -1,24 +1,12 @@
-namespace StudentGrade
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("THIS PROGRAM CALCULATES THE STUDENTS GRADES");
-            Console.WriteLine();
-            Console.WriteLine("Enter your Name: ");
-            string Name = Console.ReadLine();
-            Console.WriteLine("Enter the number of Grades: ");
-            int num = int.Parse(Console.ReadLine());
+This is a c# Program that calculates the average grade of a Student.
+It collects the students data by requesting for His/her name and grades, then prints the average.
+## Features:
+ - it uses the loop to ask for each grade.
+ - it uses type casting to convert the sum of grades to a decimal value.
+ - it uses conditional statements to handle invalid input (e.g., negative grades).
+ - Accepts multiple grades
+ - Calculates average automatically
 
-            double sum = 0;
-
-            for (int i = 1; i <= num; i++)
-            {
-                Console.WriteLine("Enter Grade " + i);
-                sum = sum + double.Parse(Console.ReadLine());
-            }
-            Console.WriteLine(Name + "'s " + "Avarege score is " + sum / num);
-        }
-    }
-}
+   ## How to Run:
+ 1. Open the project in Visual Studio or any C# IDE.
+ 2. Compile and run the program.
