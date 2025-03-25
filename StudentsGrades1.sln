@@ -1,25 +1,37 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsGrades1", "StudentsGrades1\StudentsGrades1.csproj", "{9C259762-53C1-43FF-8CE8-473B19CFBFCB}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9C259762-53C1-43FF-8CE8-473B19CFBFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C259762-53C1-43FF-8CE8-473B19CFBFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C259762-53C1-43FF-8CE8-473B19CFBFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C259762-53C1-43FF-8CE8-473B19CFBFCB}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {454968F2-64A1-4B74-A541-CC230A8328E9}
-	EndGlobalSection
-EndGlobal
+internal class Program
+{
+    public static void Main(string[] args)
+    {
+        {
+            Console.WriteLine("THIS PROGRAM CALCULATES THE STUDENT AVERAGAE GRADE.");
+            Console.WriteLine();
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter number of Grade: ");
+            int gradeNumber;
+
+            while (!int.TryParse(Console.ReadLine(), out gradeNumber) || gradeNumber <= 0)
+            {
+                Console.Write("invalid input: please enter the right number");
+            }
+
+            double sum = 0;
+
+            for (int i = 1; i <= gradeNumber; i++)
+            {
+                double grade;
+
+                Console.Write("enter grade number " + i + ":" + " ");
+
+                while (!double.TryParse(Console.ReadLine(), out grade) || grade <= 0)
+                {
+                    Console.Write("invalid input: please enter the right number ");
+                }
+                sum += grade;
+            }
+
+            Console.WriteLine(name + "'s " + "average grade is: " + (sum / gradeNumber).ToString("F2"));
+        }
+    }
+}
+
